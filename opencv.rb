@@ -62,6 +62,12 @@ class Opencv < Formula
     end
   end
 
+  def patches
+    # capture was broken in 2.4.6.1: http://code.opencv.org/issues/3156
+    [
+      "https://github.com/Itseez/opencv/pull/1129.patch"
+    ]
+  end
 
   def caveats
     python.standard_caveats if python
